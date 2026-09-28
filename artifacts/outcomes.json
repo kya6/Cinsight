@@ -1,0 +1,20 @@
+[
+  {
+    "outcome": "Closed with explanation",
+    "count": 65396,
+    "share": 0.8113,
+    "relief": 0
+  },
+  {
+    "outcome": "Closed with non-monetary relief",
+    "count": 10437,
+    "share": 0.1295,
+    "relief": 1
+  },
+  {
+    "outcome": "Closed with monetary relief",
+    "count": 4778,
+    "share": 0.0593,
+    "relief": 1
+  }
+]

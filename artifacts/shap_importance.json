@@ -1,0 +1,182 @@
+{
+  "method": "SHAP LinearExplainer on the combined LR (section 7), 200 December complaints",
+  "by_group": [
+    {
+      "group": "Company",
+      "mean_abs_shap": 1.6158,
+      "share": 0.4104
+    },
+    {
+      "group": "Received Month",
+      "mean_abs_shap": 0.5922,
+      "share": 0.1504
+    },
+    {
+      "group": "Narrative",
+      "mean_abs_shap": 0.5665,
+      "share": 0.1439
+    },
+    {
+      "group": "Product",
+      "mean_abs_shap": 0.3178,
+      "share": 0.0807
+    },
+    {
+      "group": "Sub-issue",
+      "mean_abs_shap": 0.2893,
+      "share": 0.0735
+    },
+    {
+      "group": "Issue",
+      "mean_abs_shap": 0.1978,
+      "share": 0.0502
+    },
+    {
+      "group": "Sub-product",
+      "mean_abs_shap": 0.174,
+      "share": 0.0442
+    },
+    {
+      "group": "State",
+      "mean_abs_shap": 0.0898,
+      "share": 0.0228
+    },
+    {
+      "group": "Received Day of Week",
+      "mean_abs_shap": 0.0542,
+      "share": 0.0138
+    },
+    {
+      "group": "Tags",
+      "mean_abs_shap": 0.0303,
+      "share": 0.0077
+    },
+    {
+      "group": "Narrative Length",
+      "mean_abs_shap": 0.0098,
+      "share": 0.0025
+    }
+  ],
+  "top_features": [
+    {
+      "feature": "Received Month: 10",
+      "group": "Received Month",
+      "mean_abs_shap": 0.3526,
+      "direction": "away from relief"
+    },
+    {
+      "feature": "Company: TRANSUNION INTERMEDIATE HOLDINGS, INC.",
+      "group": "Company",
+      "mean_abs_shap": 0.2919,
+      "direction": "toward relief"
+    },
+    {
+      "feature": "Company: BANK OF AMERICA, NATIONAL ASSOCIATION",
+      "group": "Company",
+      "mean_abs_shap": 0.2736,
+      "direction": "toward relief"
+    },
+    {
+      "feature": "Company: Paypal Holdings, Inc",
+      "group": "Company",
+      "mean_abs_shap": 0.2604,
+      "direction": "toward relief"
+    },
+    {
+      "feature": "Received Month: 9",
+      "group": "Received Month",
+      "mean_abs_shap": 0.2396,
+      "direction": "away from relief"
+    },
+    {
+      "feature": "Company: ENCORE CAPITAL GROUP INC.",
+      "group": "Company",
+      "mean_abs_shap": 0.2148,
+      "direction": "toward relief"
+    },
+    {
+      "feature": "Company: CITIBANK, N.A.",
+      "group": "Company",
+      "mean_abs_shap": 0.2105,
+      "direction": "toward relief"
+    },
+    {
+      "feature": "Company: Portfolio Recovery Associates, LLC",
+      "group": "Company",
+      "mean_abs_shap": 0.176,
+      "direction": "toward relief"
+    },
+    {
+      "feature": "Company: EQUIFAX, INC.",
+      "group": "Company",
+      "mean_abs_shap": 0.1722,
+      "direction": "toward relief"
+    },
+    {
+      "feature": "Product: Debt collection",
+      "group": "Product",
+      "mean_abs_shap": 0.1718,
+      "direction": "toward relief"
+    },
+    {
+      "feature": "Company: JPMORGAN CHASE & CO.",
+      "group": "Company",
+      "mean_abs_shap": 0.1526,
+      "direction": "toward relief"
+    },
+    {
+      "feature": "Company: Resurgent Capital Services L.P.",
+      "group": "Company",
+      "mean_abs_shap": 0.152,
+      "direction": "toward relief"
+    },
+    {
+      "feature": "Sub-issue: Not provided",
+      "group": "Sub-issue",
+      "mean_abs_shap": 0.1434,
+      "direction": "toward relief"
+    },
+    {
+      "feature": "Received Day of Week: Monday",
+      "group": "Received Day of Week",
+      "mean_abs_shap": 0.1383,
+      "direction": "away from relief"
+    },
+    {
+      "feature": "Product: Credit card",
+      "group": "Product",
+      "mean_abs_shap": 0.1341,
+      "direction": "toward relief"
+    },
+    {
+      "feature": "Company: National Credit Systems,Inc.",
+      "group": "Company",
+      "mean_abs_shap": 0.1253,
+      "direction": "away from relief"
+    },
+    {
+      "feature": "Company: CAPITAL ONE FINANCIAL CORPORATION",
+      "group": "Company",
+      "mean_abs_shap": 0.1094,
+      "direction": "toward relief"
+    },
+    {
+      "feature": "Product: Money transfer, virtual currency, or money service",
+      "group": "Product",
+      "mean_abs_shap": 0.0962,
+      "direction": "away from relief"
+    },
+    {
+      "feature": "Company: SYNCHRONY FINANCIAL",
+      "group": "Company",
+      "mean_abs_shap": 0.0907,
+      "direction": "toward relief"
+    },
+    {
+      "feature": "Sub-product: Checking account",
+      "group": "Sub-product",
+      "mean_abs_shap": 0.0823,
+      "direction": "toward relief"
+    }
+  ]
+}

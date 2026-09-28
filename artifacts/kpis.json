@@ -1,0 +1,23 @@
+{
+  "total_complaints": 81789,
+  "labeled_complaints": 80611,
+  "unlabeled_complaints": 1178,
+  "relief_count": 15215,
+  "relief_rate": 0.1887,
+  "date_from": "2025-09-01",
+  "date_to": "2025-12-31",
+  "test_month": "2025-12",
+  "test_complaints": 17307,
+  "test_tier_counts": {
+    "High": 5105,
+    "Medium": 2319,
+    "Low": 9883
+  },
+  "test_tier_shares": {
+    "High": 0.295,
+    "Medium": 0.134,
+    "Low": 0.571
+  },
+  "pr_auc_test": 0.5486,
+  "pr_auc_baseline": 0.1762
+}

@@ -1,0 +1,66 @@
+{
+  "model_name": "Combined Logistic Regression (TF-IDF + structured features)",
+  "calibrated": false,
+  "score_label": "Priority score",
+  "score_meaning": "Model score from 0 to 1; higher means relief is more likely. Not a calibrated probability.",
+  "trained_on": "2025-09, 2025-10",
+  "threshold_tuned_on": "2025-11",
+  "tested_on": "2025-12",
+  "features": [
+    "Consumer complaint narrative",
+    "Product",
+    "Sub-product",
+    "Issue",
+    "Sub-issue",
+    "Company",
+    "State",
+    "Tags",
+    "Received Month",
+    "Received Day of Week",
+    "Narrative Length"
+  ],
+  "required_input_columns": [
+    "Date received",
+    "Consumer complaint narrative",
+    "Product",
+    "Sub-product",
+    "Issue",
+    "Sub-issue",
+    "Company",
+    "State",
+    "Tags"
+  ],
+  "thresholds": {
+    "high": 0.6866,
+    "medium": 0.5
+  },
+  "tiers": [
+    {
+      "tier": "High",
+      "rule": "score >= 0.687",
+      "action": "Early review"
+    },
+    {
+      "tier": "Medium",
+      "rule": "0.500 <= score < 0.687",
+      "action": "Monitor"
+    },
+    {
+      "tier": "Low",
+      "rule": "score < 0.500",
+      "action": "Standard queue"
+    }
+  ],
+  "base_rate_train": 0.1953,
+  "versions": {
+    "python": "3.13.15",
+    "pandas": "2.2.3",
+    "numpy": "2.1.3",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.6.1",
+    "lightgbm": "4.7.0",
+    "shap": "0.52.0",
+    "joblib": "1.6.0"
+  },
+  "created_at": "2026-09-28T14:27:34+00:00"
+}

@@ -1,0 +1,29 @@
+{
+  "split": "test (2025-12)",
+  "n": 17307,
+  "positive_rate": 0.1762,
+  "threshold": 0.6866,
+  "pr_auc": 0.5486,
+  "baseline_pr_auc": 0.1762,
+  "precision": 0.4257,
+  "recall": 0.7127,
+  "f1": 0.533,
+  "accuracy": 0.78,
+  "confusion": {
+    "tn": 11326,
+    "fp": 2932,
+    "fn": 876,
+    "tp": 2173
+  },
+  "tier_counts": {
+    "High": 5105,
+    "Medium": 2319,
+    "Low": 9883
+  },
+  "validation": {
+    "pr_auc": 0.5921,
+    "precision": 0.462,
+    "recall": 0.7252,
+    "f1": 0.5644
+  }
+}

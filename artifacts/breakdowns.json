@@ -1,0 +1,560 @@
+{
+  "overall_relief_rate": 0.1887,
+  "product": [
+    {
+      "label": "Debt collection",
+      "complaints": 30190,
+      "relief_rate": 0.2317
+    },
+    {
+      "label": "Credit card",
+      "complaints": 14266,
+      "relief_rate": 0.2842
+    },
+    {
+      "label": "Checking or savings account",
+      "complaints": 13745,
+      "relief_rate": 0.1745
+    },
+    {
+      "label": "Money transfer, virtual currency, or money service",
+      "complaints": 7414,
+      "relief_rate": 0.1018
+    },
+    {
+      "label": "Mortgage",
+      "complaints": 4631,
+      "relief_rate": 0.0449
+    },
+    {
+      "label": "Vehicle loan or lease",
+      "complaints": 3976,
+      "relief_rate": 0.077
+    },
+    {
+      "label": "Payday loan, title loan, personal loan, or advance loan",
+      "complaints": 2756,
+      "relief_rate": 0.0541
+    },
+    {
+      "label": "Student loan",
+      "complaints": 1673,
+      "relief_rate": 0.0263
+    },
+    {
+      "label": "Prepaid card",
+      "complaints": 1196,
+      "relief_rate": 0.1605
+    },
+    {
+      "label": "Debt or credit management",
+      "complaints": 764,
+      "relief_rate": 0.1479
+    }
+  ],
+  "issue": [
+    {
+      "label": "Attempts to collect debt not owed",
+      "complaints": 13070,
+      "relief_rate": 0.2455
+    },
+    {
+      "label": "Managing an account",
+      "complaints": 7703,
+      "relief_rate": 0.1703
+    },
+    {
+      "label": "Written notification about debt",
+      "complaints": 7432,
+      "relief_rate": 0.2583
+    },
+    {
+      "label": "False statements or representation",
+      "complaints": 4342,
+      "relief_rate": 0.1875
+    },
+    {
+      "label": "Problem with a purchase shown on your statement",
+      "complaints": 3924,
+      "relief_rate": 0.2867
+    },
+    {
+      "label": "Took or threatened to take negative or legal action",
+      "complaints": 2818,
+      "relief_rate": 0.171
+    },
+    {
+      "label": "Trouble during payment process",
+      "complaints": 2303,
+      "relief_rate": 0.0495
+    },
+    {
+      "label": "Incorrect information on your report",
+      "complaints": 2234,
+      "relief_rate": 0.2744
+    },
+    {
+      "label": "Problem with a lender or other company charging your account",
+      "complaints": 2079,
+      "relief_rate": 0.1645
+    },
+    {
+      "label": "Other transaction problem",
+      "complaints": 2066,
+      "relief_rate": 0.0581
+    },
+    {
+      "label": "Closing an account",
+      "complaints": 1965,
+      "relief_rate": 0.1847
+    },
+    {
+      "label": "Fraud or scam",
+      "complaints": 1862,
+      "relief_rate": 0.0902
+    },
+    {
+      "label": "Other features, terms, or problems",
+      "complaints": 1604,
+      "relief_rate": 0.2587
+    },
+    {
+      "label": "Getting a credit card",
+      "complaints": 1553,
+      "relief_rate": 0.293
+    },
+    {
+      "label": "Fees or interest",
+      "complaints": 1467,
+      "relief_rate": 0.3517
+    }
+  ],
+  "company": [
+    {
+      "label": "JPMORGAN CHASE & CO.",
+      "complaints": 3229,
+      "relief_rate": 0.1316
+    },
+    {
+      "label": "CAPITAL ONE FINANCIAL CORPORATION",
+      "complaints": 3164,
+      "relief_rate": 0.1716
+    },
+    {
+      "label": "EQUIFAX, INC.",
+      "complaints": 3136,
+      "relief_rate": 0.4592
+    },
+    {
+      "label": "Block, Inc.",
+      "complaints": 2827,
+      "relief_rate": 0.0025
+    },
+    {
+      "label": "TRANSUNION INTERMEDIATE HOLDINGS, INC.",
+      "complaints": 2751,
+      "relief_rate": 0.534
+    },
+    {
+      "label": "Chime Financial Inc",
+      "complaints": 2623,
+      "relief_rate": 0.0858
+    },
+    {
+      "label": "WELLS FARGO & COMPANY",
+      "complaints": 2559,
+      "relief_rate": 0.2044
+    },
+    {
+      "label": "CITIBANK, N.A.",
+      "complaints": 2556,
+      "relief_rate": 0.4409
+    },
+    {
+      "label": "BANK OF AMERICA, NATIONAL ASSOCIATION",
+      "complaints": 2458,
+      "relief_rate": 0.343
+    },
+    {
+      "label": "Experian Information Solutions Inc.",
+      "complaints": 2358,
+      "relief_rate": 0.0017
+    },
+    {
+      "label": "Paypal Holdings, Inc",
+      "complaints": 1900,
+      "relief_rate": 0.3211
+    },
+    {
+      "label": "Resurgent Capital Services L.P.",
+      "complaints": 1857,
+      "relief_rate": 0.2956
+    },
+    {
+      "label": "SYNCHRONY FINANCIAL",
+      "complaints": 1755,
+      "relief_rate": 0.2222
+    },
+    {
+      "label": "ENCORE CAPITAL GROUP INC.",
+      "complaints": 1609,
+      "relief_rate": 0.4562
+    },
+    {
+      "label": "Portfolio Recovery Associates, LLC",
+      "complaints": 1344,
+      "relief_rate": 0.5476
+    },
+    {
+      "label": "CL Holdings LLC",
+      "complaints": 1273,
+      "relief_rate": 0.0
+    },
+    {
+      "label": "AMERICAN EXPRESS COMPANY",
+      "complaints": 1157,
+      "relief_rate": 0.2956
+    },
+    {
+      "label": "NAVY FEDERAL CREDIT UNION",
+      "complaints": 928,
+      "relief_rate": 0.3082
+    },
+    {
+      "label": "U.S. BANCORP",
+      "complaints": 870,
+      "relief_rate": 0.2149
+    },
+    {
+      "label": "Early Warning Services, LLC",
+      "complaints": 837,
+      "relief_rate": 0.0
+    }
+  ],
+  "state": [
+    {
+      "label": "TX",
+      "complaints": 10279,
+      "relief_rate": 0.2147
+    },
+    {
+      "label": "CA",
+      "complaints": 9794,
+      "relief_rate": 0.2099
+    },
+    {
+      "label": "FL",
+      "complaints": 7967,
+      "relief_rate": 0.1823
+    },
+    {
+      "label": "GA",
+      "complaints": 4855,
+      "relief_rate": 0.1736
+    },
+    {
+      "label": "NY",
+      "complaints": 4299,
+      "relief_rate": 0.1861
+    },
+    {
+      "label": "IL",
+      "complaints": 3346,
+      "relief_rate": 0.1931
+    },
+    {
+      "label": "NC",
+      "complaints": 2667,
+      "relief_rate": 0.1856
+    },
+    {
+      "label": "PA",
+      "complaints": 2661,
+      "relief_rate": 0.1834
+    },
+    {
+      "label": "VA",
+      "complaints": 2419,
+      "relief_rate": 0.229
+    },
+    {
+      "label": "NJ",
+      "complaints": 2330,
+      "relief_rate": 0.1828
+    },
+    {
+      "label": "MI",
+      "complaints": 2098,
+      "relief_rate": 0.1678
+    },
+    {
+      "label": "OH",
+      "complaints": 2031,
+      "relief_rate": 0.1787
+    },
+    {
+      "label": "MD",
+      "complaints": 1801,
+      "relief_rate": 0.186
+    },
+    {
+      "label": "SC",
+      "complaints": 1641,
+      "relief_rate": 0.1712
+    },
+    {
+      "label": "AZ",
+      "complaints": 1622,
+      "relief_rate": 0.1917
+    },
+    {
+      "label": "TN",
+      "complaints": 1482,
+      "relief_rate": 0.1694
+    },
+    {
+      "label": "AL",
+      "complaints": 1260,
+      "relief_rate": 0.1643
+    },
+    {
+      "label": "LA",
+      "complaints": 1258,
+      "relief_rate": 0.1645
+    },
+    {
+      "label": "WA",
+      "complaints": 1216,
+      "relief_rate": 0.1933
+    },
+    {
+      "label": "MO",
+      "complaints": 1158,
+      "relief_rate": 0.1528
+    },
+    {
+      "label": "MA",
+      "complaints": 1153,
+      "relief_rate": 0.209
+    },
+    {
+      "label": "IN",
+      "complaints": 1121,
+      "relief_rate": 0.1855
+    },
+    {
+      "label": "NV",
+      "complaints": 1105,
+      "relief_rate": 0.1575
+    },
+    {
+      "label": "CO",
+      "complaints": 1102,
+      "relief_rate": 0.1606
+    },
+    {
+      "label": "MN",
+      "complaints": 779,
+      "relief_rate": 0.1977
+    },
+    {
+      "label": "CT",
+      "complaints": 683,
+      "relief_rate": 0.2196
+    },
+    {
+      "label": "OR",
+      "complaints": 664,
+      "relief_rate": 0.1672
+    },
+    {
+      "label": "WI",
+      "complaints": 654,
+      "relief_rate": 0.1483
+    },
+    {
+      "label": "MS",
+      "complaints": 645,
+      "relief_rate": 0.155
+    },
+    {
+      "label": "OK",
+      "complaints": 630,
+      "relief_rate": 0.1667
+    },
+    {
+      "label": "AR",
+      "complaints": 596,
+      "relief_rate": 0.1862
+    },
+    {
+      "label": "KY",
+      "complaints": 582,
+      "relief_rate": 0.1753
+    },
+    {
+      "label": "Not provided",
+      "complaints": 546,
+      "relief_rate": 0.1154
+    },
+    {
+      "label": "UT",
+      "complaints": 483,
+      "relief_rate": 0.1801
+    },
+    {
+      "label": "WV",
+      "complaints": 355,
+      "relief_rate": 0.2873
+    },
+    {
+      "label": "KS",
+      "complaints": 345,
+      "relief_rate": 0.0899
+    },
+    {
+      "label": "DE",
+      "complaints": 332,
+      "relief_rate": 0.2108
+    },
+    {
+      "label": "IA",
+      "complaints": 306,
+      "relief_rate": 0.1699
+    },
+    {
+      "label": "NM",
+      "complaints": 286,
+      "relief_rate": 0.2378
+    },
+    {
+      "label": "DC",
+      "complaints": 276,
+      "relief_rate": 0.1812
+    },
+    {
+      "label": "RI",
+      "complaints": 226,
+      "relief_rate": 0.1637
+    },
+    {
+      "label": "ID",
+      "complaints": 217,
+      "relief_rate": 0.1336
+    },
+    {
+      "label": "NE",
+      "complaints": 198,
+      "relief_rate": 0.1061
+    },
+    {
+      "label": "NH",
+      "complaints": 195,
+      "relief_rate": 0.1692
+    },
+    {
+      "label": "HI",
+      "complaints": 190,
+      "relief_rate": 0.1789
+    },
+    {
+      "label": "MT",
+      "complaints": 112,
+      "relief_rate": 0.1786
+    },
+    {
+      "label": "PR",
+      "complaints": 109,
+      "relief_rate": 0.1468
+    },
+    {
+      "label": "ME",
+      "complaints": 109,
+      "relief_rate": 0.1927
+    },
+    {
+      "label": "AK",
+      "complaints": 87,
+      "relief_rate": 0.1954
+    },
+    {
+      "label": "SD",
+      "complaints": 84,
+      "relief_rate": 0.1071
+    },
+    {
+      "label": "ND",
+      "complaints": 78,
+      "relief_rate": 0.141
+    },
+    {
+      "label": "WY",
+      "complaints": 76,
+      "relief_rate": 0.1053
+    },
+    {
+      "label": "VT",
+      "complaints": 54,
+      "relief_rate": 0.2407
+    }
+  ],
+  "tags": [
+    {
+      "label": "Not provided",
+      "complaints": 68874,
+      "relief_rate": 0.1932
+    },
+    {
+      "label": "Servicemember",
+      "complaints": 6981,
+      "relief_rate": 0.151
+    },
+    {
+      "label": "Older American",
+      "complaints": 3706,
+      "relief_rate": 0.1846
+    },
+    {
+      "label": "Older American, Servicemember",
+      "complaints": 1050,
+      "relief_rate": 0.1648
+    }
+  ],
+  "day_of_week": [
+    {
+      "label": "Tuesday",
+      "complaints": 16361,
+      "relief_rate": 0.1967
+    },
+    {
+      "label": "Wednesday",
+      "complaints": 14883,
+      "relief_rate": 0.1893
+    },
+    {
+      "label": "Monday",
+      "complaints": 14383,
+      "relief_rate": 0.1769
+    },
+    {
+      "label": "Thursday",
+      "complaints": 13365,
+      "relief_rate": 0.2019
+    },
+    {
+      "label": "Friday",
+      "complaints": 11291,
+      "relief_rate": 0.1935
+    },
+    {
+      "label": "Sunday",
+      "complaints": 5877,
+      "relief_rate": 0.1725
+    },
+    {
+      "label": "Saturday",
+      "complaints": 4451,
+      "relief_rate": 0.1654
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "file": "cinsight_core.py",
+    "purpose": "Shared feature prep, tiers, explanations — import in the backend",
+    "kb": 4.6
+  },
+  {
+    "file": "model_score.joblib",
+    "purpose": "Final model: scores for /predict and /predict/batch",
+    "kb": 137.9
+  },
+  {
+    "file": "model_explain.joblib",
+    "purpose": "Same model, uncalibrated: per-complaint explanations",
+    "kb": 137.9
+  },
+  {
+    "file": "model_meta.json",
+    "purpose": "Thresholds, tiers, score meaning, features, versions",
+    "kb": 1.4
+  },
+  {
+    "file": "requirements_model.txt",
+    "purpose": "Pinned versions for the backend",
+    "kb": 0.1
+  },
+  {
+    "file": "kpis.json",
+    "purpose": "Overview: KPI cards",
+    "kb": 0.5
+  },
+  {
+    "file": "outcomes.json",
+    "purpose": "Overview: outcome donut",
+    "kb": 0.3
+  },
+  {
+    "file": "monthly.json",
+    "purpose": "Overview: monthly volume and relief-rate trend",
+    "kb": 0.6
+  },
+  {
+    "file": "breakdowns.json",
+    "purpose": "Overview / Insights: relief rate by product, issue, company, state, tags, weekday",
+    "kb": 10.6
+  },
+  {
+    "file": "high_risk_top.json",
+    "purpose": "Overview + High-risk queue: top 300 December complaints with reasons",
+    "kb": 379.0
+  },
+  {
+    "file": "test_scored.parquet",
+    "purpose": "High-risk queue: all scored December complaints (API filters/paginates)",
+    "kb": 2997.1
+  },
+  {
+    "file": "model_comparison.json",
+    "purpose": "Insights: model comparison on validation",
+    "kb": 1.0
+  },
+  {
+    "file": "test_metrics.json",
+    "purpose": "Insights: final test metrics and confusion matrix",
+    "kb": 0.5
+  },
+  {
+    "file": "pr_curve.json",
+    "purpose": "Insights: precision-recall curve with the chosen threshold",
+    "kb": 26.3
+  },
+  {
+    "file": "calibration.json",
+    "purpose": "Insights: reliability curve",
+    "kb": 0.8
+  },
+  {
+    "file": "shap_importance.json",
+    "purpose": "Insights: SHAP by group and top features",
+    "kb": 4.3
+  },
+  {
+    "file": "form_options.json",
+    "purpose": "Score a complaint: cascading dropdown options",
+    "kb": 192.3
+  },
+  {
+    "file": "sample_batch.csv",
+    "purpose": "Batch scoring: demo upload file",
+    "kb": 64.1
+  }
+]

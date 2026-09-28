@@ -1,0 +1,47 @@
+{
+  "split": "test (2025-12)",
+  "calibrated": false,
+  "note": "Points near the diagonal mean the score can be read as a probability.",
+  "points": [
+    {
+      "predicted": 0.0079,
+      "observed": 0.0029
+    },
+    {
+      "predicted": 0.025,
+      "observed": 0.0006
+    },
+    {
+      "predicted": 0.0639,
+      "observed": 0.011
+    },
+    {
+      "predicted": 0.1511,
+      "observed": 0.0364
+    },
+    {
+      "predicted": 0.3034,
+      "observed": 0.0826
+    },
+    {
+      "predicted": 0.4673,
+      "observed": 0.1457
+    },
+    {
+      "predicted": 0.6117,
+      "observed": 0.2161
+    },
+    {
+      "predicted": 0.7348,
+      "observed": 0.3293
+    },
+    {
+      "predicted": 0.8266,
+      "observed": 0.3677
+    },
+    {
+      "predicted": 0.9347,
+      "observed": 0.5696
+    }
+  ]
+}

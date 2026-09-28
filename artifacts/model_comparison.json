@@ -1,0 +1,42 @@
+{
+  "split": "validation (2025-11)",
+  "metric_note": "PR-AUC ranks models; F1/precision/recall use the default 0.5 threshold.",
+  "positive_rate": 0.1857,
+  "models": [
+    {
+      "model": "Combined (feature-level LR)",
+      "pr_auc": 0.5921,
+      "f1_at_0_5": 0.532,
+      "precision_at_0_5": 0.3826,
+      "recall_at_0_5": 0.873
+    },
+    {
+      "model": "Structured only (LightGBM)",
+      "pr_auc": 0.5898,
+      "f1_at_0_5": 0.5493,
+      "precision_at_0_5": 0.4447,
+      "recall_at_0_5": 0.7183
+    },
+    {
+      "model": "Combined (ensemble average)",
+      "pr_auc": 0.5559,
+      "f1_at_0_5": 0.5611,
+      "precision_at_0_5": 0.4631,
+      "recall_at_0_5": 0.7117
+    },
+    {
+      "model": "Text only (TF-IDF + LR)",
+      "pr_auc": 0.4291,
+      "f1_at_0_5": 0.4495,
+      "precision_at_0_5": 0.3453,
+      "recall_at_0_5": 0.6437
+    },
+    {
+      "model": "Baseline (majority class)",
+      "pr_auc": 0.1857,
+      "f1_at_0_5": 0.0,
+      "precision_at_0_5": 0.0,
+      "recall_at_0_5": 0.0
+    }
+  ]
+}

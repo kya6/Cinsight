@@ -1,0 +1,30 @@
+[
+  {
+    "month": "2025-09",
+    "complaints": 22852,
+    "relief_rate": 0.2121,
+    "split": "train",
+    "predicted_high_share": null
+  },
+  {
+    "month": "2025-10",
+    "complaints": 20012,
+    "relief_rate": 0.1761,
+    "split": "train",
+    "predicted_high_share": null
+  },
+  {
+    "month": "2025-11",
+    "complaints": 20440,
+    "relief_rate": 0.1857,
+    "split": "validation",
+    "predicted_high_share": 0.2914
+  },
+  {
+    "month": "2025-12",
+    "complaints": 17307,
+    "relief_rate": 0.1762,
+    "split": "test",
+    "predicted_high_share": 0.295
+  }
+]
