@@ -408,7 +408,7 @@ const topColumns: Column<ScoredComplaint>[] = [
     meta: { className: "w-23", skeleton: "w-16" },
     cell: ({ row }) => (
       <Link
-        href={`/queue?q=${row.original["Complaint ID"]}`}
+        href={`/queue?tier=${row.original.tier}&q=${row.original["Complaint ID"]}`}
         aria-label={`Open complaint ${row.original["Complaint ID"]} in the high-risk queue`}
         className="font-medium text-ink tabular-nums after:absolute after:inset-0 after:content-[''] hover:underline"
       >
