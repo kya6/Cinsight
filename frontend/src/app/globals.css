@@ -1,0 +1,189 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* The design is dark by default. shadcn's `dark:` tweaks only apply under a .dark class, which is never set. */
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Cinsight design tokens, mapped from the Figma variables (file gAgP8skgSfaFSfvIm0XZOh).
+ * Components use these tokens (bg-surface, text-ink-3, rounded-card, text-13 ...) rather than raw values.
+ * The shadcn variables further down point at the same tokens so its primitives match the design.
+ */
+@theme {
+  /* Surfaces */
+  --color-page: #191819;
+  --color-sidebar: #202121;
+  --color-surface: #272727;          /* Black/Big Stone 41 — cards */
+  --color-inset: #151515;            /* Black/Bunker 19 — inputs, rule rows, bar tracks */
+  --color-chip: #383838;             /* Indigo/Big Stone 39 — neutral chips, skeletons */
+  --color-chip-2: #3c3c3c;
+  --color-bar: #3f3f3f;              /* Indigo/Pickled Bluewood 35 — muted bars */
+  --color-bar-2: #484848;            /* Blue/Pickled Bluewood 18 */
+  --color-bar-3: #6e6e6e;            /* Gray/Kashmir Blue 17 */
+
+  /* Lines */
+  --color-line: #323232;             /* Indigo/Big Stone 31 — card borders, table header rule */
+  --color-line-soft: #282828;        /* Black/Big Stone 40 — dividers */
+  --color-line-row: #252525;         /* Black/Big Stone 48 — table rows */
+  --color-line-card: #2d2c2b;        /* first KPI card, topbar */
+  --color-field: #393939;            /* input borders */
+  --color-ghost: #3c3c3c;            /* outline buttons */
+  --color-brand-line: #2b4a3e;       /* Teal/Te Papa Green 36 — selected-complaint panel */
+
+  /* Text */
+  --color-ink: #efefef;
+  --color-ink-2: #cfcfcf;            /* White/Heather 28 — labels */
+  --color-ink-button: #dfdfdf;       /* outline button text */
+  --color-ink-nav: #c4c4c4;
+  --color-ink-3: #a3a3a3;            /* Gray/Gull Gray 45 — secondary text */
+  --color-ink-4: #939393;            /* Gray/Regent Gray 40 — placeholders, tertiary */
+  --color-legend: #93a1b3;           /* legend labels (as designed) */
+  --color-legend-strong: #e8eef5;
+  --color-rule: #c3cedb;             /* tier rule text (as designed) */
+  --color-rule-value: #8190a4;
+
+  /* Brand */
+  --color-brand: #4ff7bc;            /* Turquoise/Aquamarine 47 */
+  --color-on-brand: #062b20;
+  --color-on-brand-nav: #141414;
+  --color-brand-tint: #122a22;       /* Black/Timber Green 29 */
+  --color-brand-tint-2: #12211c;     /* Black/Aztec 19 */
+  --color-row-selected: #14231e;     /* Black/Aztec 24 — selected table row */
+
+  /* Tiers: text, bar, chip background */
+  --color-high: #ff9489;
+  --color-high-bar: #ff7a6e;         /* Red/Bittersweet 30 */
+  --color-high-bg: #3b1c1a;          /* Black/Jon 19 */
+  --color-high-bg-2: #2a1a19;        /* Black/Cocoa Brown 17 */
+  --color-high-line: #4a2a28;        /* Brown/Crater Brown 22 */
+  --color-high-line-2: #5a2a26;      /* Brown/Buccaneer 31 — active High tab */
+  --color-medium: #f5c865;           /* Gold/Cream Can 13 */
+  --color-medium-bg: #3a2f15;        /* Black/Brown Tumbleweed 25 */
+  --color-low: #c9c9c9;
+  --color-low-bg: #292929;           /* Black/Big Stone 28 */
+
+  /* Type: Tektur. Sizes carry their most common Figma line height. */
+  --font-sans: var(--font-tektur), ui-sans-serif, system-ui, sans-serif;
+  --text-10: 10px;
+  --text-11: 11px;
+  --text-11--line-height: 14px;
+  --text-11--letter-spacing: 0.88px;
+  --text-12: 12px;
+  --text-12--line-height: 18px;
+  --text-13: 13px;
+  --text-13--line-height: 19.5px;
+  --text-14: 14px;
+  --text-14--line-height: 18px;
+  --text-16: 16px;
+  --text-16--line-height: 20px;
+  --text-26: 26px;
+  --text-26--line-height: 34px;
+  --text-28: 28px;
+  --text-28--line-height: 36px;
+  --text-30: 30px;
+  --text-30--line-height: 39px;
+  --text-30--letter-spacing: 0.3px;
+  --text-34: 34px;
+  --text-34--line-height: 44px;
+  --leading-14: 14px;
+  --leading-15: 15px;
+  --leading-17: 17px;
+  --leading-18: 18px;
+  --leading-19: 19px;
+  --leading-20: 20px;
+  --leading-21: 21px;
+  --tracking-label: 0.96px;
+
+  /* Radii */
+  --radius-3: 3px;
+  --radius-5: 5px;
+  --radius-7: 7px;
+  --radius-12: 12px;
+  --radius-card: 14px;
+
+  /* Layout */
+  --spacing-sidebar: 248px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+/* shadcn/ui theme variables -> Cinsight tokens. The design is dark only. */
+:root {
+  color-scheme: dark;
+  --background: var(--color-page);
+  --foreground: var(--color-ink);
+  --card: var(--color-surface);
+  --card-foreground: var(--color-ink);
+  --popover: var(--color-surface);
+  --popover-foreground: var(--color-ink);
+  --primary: var(--color-brand);
+  --primary-foreground: var(--color-on-brand);
+  --secondary: var(--color-chip);
+  --secondary-foreground: var(--color-ink);
+  --muted: var(--color-inset);
+  --muted-foreground: var(--color-ink-3);
+  --accent: var(--color-line);
+  --accent-foreground: var(--color-ink);
+  --destructive: var(--color-high-bar);
+  --border: var(--color-line);
+  --input: var(--color-field);
+  --ring: var(--color-brand);
+  --radius: 10px; /* rounded-lg = 10 (buttons, inputs), rounded-xl = 14 (cards) */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply bg-page font-sans text-ink antialiased;
+    font-variation-settings: "wdth" 100;
+  }
+  body {
+    @apply bg-page text-ink;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  /* One visible focus style everywhere (keyboard users) */
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Monochrome Figma icon, recoloured with currentColor through a CSS mask */
+  .icon-mask {
+    display: inline-block;
+    flex-shrink: 0;
+    background-color: currentColor;
+    mask: var(--icon) center / contain no-repeat;
+  }
+}
