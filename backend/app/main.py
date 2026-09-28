@@ -17,7 +17,7 @@ app = FastAPI(
 app.add_middleware(GZipMiddleware, minimum_size=1024)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", *settings.FRONTEND_ORIGINS],
+    allow_origins=["http://localhost:3000", "https://cinsight.moxs.space", *settings.FRONTEND_ORIGINS],
     allow_origin_regex=r"https://.*\.vercel\.app",
     allow_methods=["GET", "POST"],
     allow_headers=["Content-Type"],

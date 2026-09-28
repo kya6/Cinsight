@@ -168,6 +168,17 @@ def test_export_streams_without_actual_relief(monkeypatch):
     assert rows[0]["reason_1"] == NOTEBOOK.loc[int(rows[0]["Complaint ID"])]["top_reason"]
 
 
+@pytest.mark.parametrize("origin, allowed", [
+    ("http://localhost:3000", True),
+    ("https://cinsight.moxs.space", True),
+    ("https://cinsight-git-feature-x.vercel.app", True),
+    ("https://evil.example", False),
+])
+def test_cors(origin, allowed):
+    res = client.get("/api/health", headers={"Origin": origin})
+    assert (res.headers.get("access-control-allow-origin") == origin) is allowed
+
+
 def test_sample_batch_download():
     res = client.get("/api/sample-batch")
     assert res.status_code == 200 and res.content == SAMPLE
