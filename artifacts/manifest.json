@@ -75,6 +75,11 @@
     "kb": 0.8
   },
   {
+    "file": "score_bands.json",
+    "purpose": "Insights: observed relief rate by score band, from validation",
+    "kb": 2.2
+  },
+  {
     "file": "shap_importance.json",
     "purpose": "Insights: SHAP by group and top features",
     "kb": 4.3
