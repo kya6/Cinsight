@@ -203,7 +203,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       </a>
       <Sidebar />
       <Topbar />
-      <main id="main" className="mx-auto flex w-full flex-col gap-4 px-4 pt-6 pb-8 md:px-6 lg:gap-5 lg:px-9 lg:pt-8">
+      <main id="main" className="page-enter mx-auto flex w-full flex-col gap-4 px-4 pt-6 pb-8 md:px-6 lg:gap-5 lg:px-9 lg:pt-8">
         {children}
       </main>
     </div>

@@ -14,6 +14,7 @@ import {
 } from "recharts";
 import { Card, CardTitle, FieldLabel } from "@/components/card";
 import { ChartTooltip } from "@/components/chart-tooltip";
+import { CountUp } from "@/components/count-up";
 import { PageHeader } from "@/components/page-header";
 import { Bone, ErrorState, Loading } from "@/components/states";
 import { queries, type Dashboard, type ModelMeta } from "@/lib/api";
@@ -76,19 +77,22 @@ function MetricCards({ meta, test, comparison }: {
   const ready = meta && test && comparison;
   const dec = meta ? formatMonth(meta.tested_on) : "";
   const nov = meta ? formatMonth(meta.threshold_tuned_on) : "";
+  const twoDecimals = (n: number) => n.toFixed(2);
   const cards = ready
     ? [
-        { label: `Precision · ${dec}`, value: test.precision.toFixed(2), caption: "of flagged complaints ended in relief" },
-        { label: `Recall · ${dec}`, value: test.recall.toFixed(2), caption: `of ${formatMonth(meta.tested_on, true)} relief cases were flagged` },
-        { label: `F1 · ${dec}`, value: test.f1.toFixed(2), caption: "balance of precision and recall" },
+        { label: `Precision · ${dec}`, value: test.precision, format: twoDecimals, caption: "of flagged complaints ended in relief" },
+        { label: `Recall · ${dec}`, value: test.recall, format: twoDecimals, caption: `of ${formatMonth(meta.tested_on, true)} relief cases were flagged` },
+        { label: `F1 · ${dec}`, value: test.f1, format: twoDecimals, caption: "balance of precision and recall" },
         {
           label: `Accuracy · ${dec}`,
-          value: test.accuracy.toFixed(2),
+          value: test.accuracy,
+          format: twoDecimals,
           caption: `vs ${(1 - test.positive_rate).toFixed(2)} by always predicting “no relief”`,
         },
         {
           label: `PR-AUC · ${nov}`,
-          value: test.validation.pr_auc.toFixed(3),
+          value: test.validation.pr_auc,
+          format: (n: number) => n.toFixed(3),
           valueClass: "text-brand",
           caption: `${(test.validation.pr_auc / comparison.positive_rate).toFixed(1)}× the ${comparison.positive_rate.toFixed(3)} baseline`,
         },
@@ -102,7 +106,9 @@ function MetricCards({ meta, test, comparison }: {
           {card ? (
             <>
               <h2 className="text-12 leading-15 font-semibold tracking-label text-ink-3 uppercase">{card.label}</h2>
-              <p className={cn("text-34 font-semibold tabular-nums", card.valueClass ?? "text-ink")}>{card.value}</p>
+              <p className={cn("text-34 font-semibold tabular-nums", card.valueClass ?? "text-ink")}>
+                <CountUp value={card.value} format={card.format} />
+              </p>
               <p className="text-13 leading-17 text-ink-3">{card.caption}</p>
             </>
           ) : (
@@ -149,7 +155,7 @@ function ComparisonCard({ meta, comparison }: { meta?: ModelMeta; comparison?: D
     <Card aria-labelledby="comparison-title" className="gap-4">
       <CardTitle id="comparison-title">Model comparison · PR-AUC on {month}</CardTitle>
       <ul className="flex flex-col gap-4">
-        {comparison.models.map((m) => {
+        {comparison.models.map((m, i) => {
           const chosen = m === selected;
           const baseline = isBaseline(m.model);
           return (
@@ -170,8 +176,8 @@ function ComparisonCard({ meta, comparison }: { meta?: ModelMeta; comparison?: D
               </div>
               <div aria-hidden="true" className="h-3 overflow-hidden rounded-5 bg-inset">
                 <div
-                  className={cn("h-full rounded-[6px]", chosen ? "bg-brand" : "bg-bar-3")}
-                  style={{ width: `${(m.pr_auc / scaleMax) * 100}%` }}
+                  className={cn("h-full origin-left animate-grow-x rounded-[6px]", chosen ? "bg-brand" : "bg-bar-3")}
+                  style={{ width: `${(m.pr_auc / scaleMax) * 100}%`, animationDelay: `${i * 70}ms` }}
                 />
               </div>
             </li>
@@ -211,7 +217,9 @@ function ConfusionCard({ meta, test }: { meta?: ModelMeta; test?: Dashboard["tes
               className={cn("flex flex-col gap-1 rounded-lg p-4", cell.correct ? "bg-brand-tint-2" : "bg-high-bg-2")}
             >
               <span className={cn("text-12 leading-15", cell.correct ? "text-brand-soft" : "text-high")}>{cell.label}</span>
-              <span className="text-28 font-semibold text-ink tabular-nums">{formatCount(cell.value)}</span>
+              <span className="text-28 font-semibold text-ink tabular-nums">
+                <CountUp value={cell.value} format={formatCount} />
+              </span>
               <span className="text-12 leading-15 text-ink-3">{cell.caption}</span>
             </li>
           ))}
@@ -256,12 +264,15 @@ function ShapCard({ shap, testMonth }: { shap?: Dashboard["shap_importance"]; te
             {sample ? `, on ${sample} ${capitalize(testMonth)} complaints` : ""}. Shares add up to 100%.
           </p>
           <ul className="flex flex-col gap-3">
-            {groups.map((g) => (
+            {groups.map((g, i) => (
               <li key={g.group} className="flex items-center justify-between gap-3 text-12 leading-15">
                 <span className="min-w-0 text-ink-2">{GROUP_LABEL[g.group] ?? g.group}</span>
                 <span className="flex shrink-0 items-center gap-3">
                   <span aria-hidden="true" className="h-2.5 w-22.5 overflow-hidden rounded-5 bg-inset">
-                    <span className="block h-full rounded-5 bg-bar-3" style={{ width: `${(g.share / max) * 88}%` }} />
+                    <span
+                      className="block h-full origin-left animate-grow-x rounded-5 bg-bar-3"
+                      style={{ width: `${(g.share / max) * 88}%`, animationDelay: `${i * 50}ms` }}
+                    />
                   </span>
                   <span className="w-8 text-right text-ink-4 tabular-nums">{formatPercent(g.share, 0)}</span>
                 </span>
@@ -340,7 +351,16 @@ function PrCurveCard({ pr, test, testMonth }: {
                     ) : null;
                   }}
                 />
-                <Line type="monotone" dataKey="precision" stroke="var(--color-brand)" strokeWidth={2.5} dot={false} isAnimationActive={false} />
+                <Line
+                  type="monotone"
+                  dataKey="precision"
+                  stroke="var(--color-brand)"
+                  strokeWidth={2.5}
+                  dot={false}
+                  isAnimationActive="auto"
+                  animationDuration={1000}
+                  animationEasing="ease-out"
+                />
                 <ReferenceDot
                   x={chosen.recall}
                   y={chosen.precision}

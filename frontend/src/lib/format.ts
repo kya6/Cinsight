@@ -1,4 +1,4 @@
-const integer = new Intl.NumberFormat("en-US");
+const integer = new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 });
 
 /** 81789 -> "81,789" */
 export const formatCount = (n: number) => integer.format(n);

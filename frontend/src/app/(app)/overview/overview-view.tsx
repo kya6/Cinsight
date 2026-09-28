@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Bar, BarChart, Cell, LabelList, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { Card, CardTitle } from "@/components/card";
 import { ChartTooltip } from "@/components/chart-tooltip";
+import { CountUp } from "@/components/count-up";
 import { DataTable, Truncate, type Column } from "@/components/data-table";
 import { Icon } from "@/components/icon";
 import { PageHeader } from "@/components/page-header";
@@ -85,21 +86,25 @@ function KpiCards({ kpis, testMetrics, comparison }: {
     kpis && testMetrics && comparison
       ? [
           {
-            value: formatCount(kpis.total_complaints),
+            value: kpis.total_complaints,
+            format: formatCount,
             caption: `${formatMonthRange(kpis.date_from, kpis.date_to)}, excluding complaints still in progress`,
           },
           {
-            value: formatPercent(kpis.relief_rate),
+            value: kpis.relief_rate,
+            format: (n: number) => formatPercent(n),
             valueClass: "text-brand",
             caption: `${formatCount(kpis.relief_count)} of ${formatCount(kpis.labeled_complaints)} labeled complaints ended in relief`,
           },
           {
-            value: formatCount(kpis.test_tier_counts.High),
+            value: kpis.test_tier_counts.High,
+            format: formatCount,
             valueClass: "text-high",
             caption: `${formatPercent(kpis.test_tier_shares.High)} of ${formatCount(kpis.test_complaints)} ${formatMonth(kpis.test_month, true)} complaints`,
           },
           {
-            value: testMetrics.validation.pr_auc.toFixed(3),
+            value: testMetrics.validation.pr_auc,
+            format: (n: number) => n.toFixed(3),
             caption: `vs ${comparison.positive_rate.toFixed(3)} for a no-skill baseline`,
           },
         ]
@@ -114,7 +119,9 @@ function KpiCards({ kpis, testMetrics, comparison }: {
             <h2 className="text-13 text-ink-3">{label}</h2>
             {card ? (
               <>
-                <p className={`text-34 font-semibold tabular-nums ${card.valueClass ?? "text-ink"}`}>{card.value}</p>
+                <p className={`text-34 font-semibold tabular-nums ${card.valueClass ?? "text-ink"}`}>
+                  <CountUp value={card.value} format={card.format} />
+                </p>
                 <p className="text-13 text-ink-3">{card.caption}</p>
               </>
             ) : (
@@ -167,7 +174,9 @@ function OutcomeCard({ kpis, outcomes }: { kpis?: Dashboard["kpis"]; outcomes?: 
                 endAngle={-270}
                 stroke="var(--color-surface)"
                 strokeWidth={2}
-                isAnimationActive={false}
+                isAnimationActive="auto"
+                animationDuration={900}
+                animationEasing="ease-out"
               >
                 {slices.map((s) => (
                   <Cell key={s.label} fill={s.color} />
@@ -186,7 +195,9 @@ function OutcomeCard({ kpis, outcomes }: { kpis?: Dashboard["kpis"]; outcomes?: 
               />
             </PieChart>
             <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
-              <span className="text-[20px] leading-6 font-bold text-ink">{formatCount(kpis.total_complaints)}</span>
+              <span className="text-[20px] leading-6 font-bold text-ink tabular-nums">
+                <CountUp value={kpis.total_complaints} format={formatCount} />
+              </span>
               <span className="text-10 text-ink-3">complaints</span>
             </div>
           </div>
@@ -278,7 +289,13 @@ function MonthlyCard({ monthly, meta }: { monthly?: Dashboard["monthly"]; meta?:
                     ) : null;
                   }}
                 />
-                <Bar dataKey="complaints" radius={[8, 8, 0, 0]} isAnimationActive={false}>
+                <Bar
+                  dataKey="complaints"
+                  radius={[8, 8, 0, 0]}
+                  isAnimationActive="auto"
+                  animationDuration={800}
+                  animationEasing="ease-out"
+                >
                   {data.map((m) => (
                     <Cell key={m.month} fill={SPLIT[m.split]?.color} />
                   ))}
@@ -358,7 +375,10 @@ function PriorityCard({ kpis, testMetrics, meta, className }: {
             aria-label={`${formatPercent(kpis.test_tier_shares.High)} of ${month} complaints are High priority`}
             className="h-3.5 overflow-hidden rounded-7 bg-inset"
           >
-            <div className="h-full rounded-7 bg-high-bar" style={{ width: `${kpis.test_tier_shares.High * 100}%` }} />
+            <div
+              className="h-full origin-left animate-grow-x rounded-7 bg-high-bar"
+              style={{ width: `${kpis.test_tier_shares.High * 100}%` }}
+            />
           </div>
           <ul className="flex flex-1 flex-col gap-2.75">
             {TIERS.map((tier) => (

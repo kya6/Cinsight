@@ -1,11 +1,12 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, type CSSProperties } from "react";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { Controller, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Card, CardTitle } from "@/components/card";
+import { CountUp } from "@/components/count-up";
 import { ComboboxField, controlClass, Field, SelectField } from "@/components/form-fields";
 import { Icon } from "@/components/icon";
 import { PageHeader } from "@/components/page-header";
@@ -73,10 +74,11 @@ export function ScoreView() {
             ) : scoring.isError ? (
               <ErrorState error={scoring.error} onRetry={() => scoring.mutate(scoring.variables)} />
             ) : scoring.data && meta.data ? (
-              <>
+              // Keyed by submission so every new score animates in again
+              <div key={scoring.submittedAt} className="flex animate-rise flex-col gap-3.5 md:gap-4">
                 <ResultCard result={scoring.data} meta={meta.data} />
                 <WhyCard result={scoring.data} />
-              </>
+              </div>
             ) : (
               <Card>
                 <EmptyState title="No score yet" className="bg-transparent py-16">
@@ -368,12 +370,14 @@ function ScoreRing({ score, tier, label }: { score: number; tier: Tier; label: s
           fill="none"
           strokeWidth="6"
           strokeLinecap="round"
-          strokeDasharray={`${score * circumference} ${circumference}`}
-          className={RING_STROKE[tier]}
+          strokeDasharray={circumference}
+          strokeDashoffset={circumference * (1 - score)}
+          style={{ "--ring-from": `${circumference}px` } as CSSProperties}
+          className={cn("animate-ring", RING_STROKE[tier])}
         />
       </svg>
-      <span className="absolute inset-0 flex items-center justify-center text-13 font-semibold text-ink tabular-nums">
-        {formatScore(score)}
+      <span aria-hidden="true" className="absolute inset-0 flex items-center justify-center text-13 font-semibold text-ink tabular-nums">
+        <CountUp value={score} format={(n) => formatScore(n)} duration={900} />
       </span>
     </div>
   );
@@ -440,7 +444,7 @@ function WhyCard({ result }: { result: PredictResponse }) {
         <span>toward relief →</span>
       </div>
       <ul className="flex flex-col gap-4.5">
-        {result.reasons.map((reason) => {
+        {result.reasons.map((reason, i) => {
           const toward = reason.contribution > 0;
           const half = (Math.abs(reason.contribution) / max) * 40; // % of the full bar; the largest reaches 80% of its side
           return (
@@ -454,8 +458,11 @@ function WhyCard({ result }: { result: PredictResponse }) {
               </div>
               <div aria-hidden="true" className="relative h-2.5 rounded-5 bg-inset">
                 <span
-                  className={cn("absolute inset-y-0", toward ? "left-1/2 rounded-r-5 bg-brand" : "right-1/2 rounded-l-5 bg-high-bar")}
-                  style={{ width: `${half}%` }}
+                  className={cn(
+                    "absolute inset-y-0 animate-grow-x",
+                    toward ? "left-1/2 origin-left rounded-r-5 bg-brand" : "right-1/2 origin-right rounded-l-5 bg-high-bar",
+                  )}
+                  style={{ width: `${half}%`, animationDelay: `${150 + i * 70}ms` }}
                 />
                 <span className="absolute -top-0.5 left-1/2 h-3.5 w-px bg-axis" />
               </div>

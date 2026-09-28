@@ -37,7 +37,7 @@ export function SignIn() {
         <PixelBlast color="#4FF7BC" speed={reducedMotion ? 0 : 0.5} enableRipples={!reducedMotion} />
       </div>
 
-      <main className="w-full max-w-102 rounded-card border border-line-card bg-surface px-6 py-7 md:p-9">
+      <main className="w-full max-w-102 animate-rise rounded-card border border-line-card bg-surface px-6 py-7 md:p-9">
         <form
           className="flex flex-col gap-4.5 md:gap-5.5"
           onSubmit={(event) => {

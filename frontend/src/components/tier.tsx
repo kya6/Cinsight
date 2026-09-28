@@ -45,7 +45,10 @@ export function ScoreBar({ score, tier }: { score: number; tier: Tier }) {
   return (
     <span className="flex items-center gap-2">
       <span aria-hidden="true" className="h-2.5 w-12.75 overflow-hidden rounded-5 bg-inset">
-        <span className={cn("block h-full rounded-5", TIER_STYLE[tier].bar)} style={{ width: `${score * 100}%` }} />
+        <span
+          className={cn("block h-full origin-left animate-grow-x rounded-5", TIER_STYLE[tier].bar)}
+          style={{ width: `${score * 100}%` }}
+        />
       </span>
       <span className="text-12 leading-15 text-ink-2 tabular-nums">{formatScore(score)}</span>
     </span>
