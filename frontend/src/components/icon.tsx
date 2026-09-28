@@ -12,7 +12,12 @@ export type IconName =
   | "download"
   | "search"
   | "chevron-down"
-  | "copy";
+  | "copy"
+  | "upload"
+  | "download-link"
+  | "download-small"
+  | "check"
+  | "file";
 
 /** A Figma icon from /public/icons, drawn in the current text colour. Decorative: label the control instead. */
 export function Icon({ name, className }: { name: IconName; className?: string }) {
