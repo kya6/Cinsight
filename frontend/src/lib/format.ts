@@ -17,6 +17,18 @@ function parseIsoDate(isoDate: string) {
   return y && m ? new Date(Date.UTC(y, m - 1, d || 1)) : null;
 }
 
+const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
+  "October", "November", "December"];
+
+/** Explanation labels from the API, made readable: "Received Month: 9" -> "Received month: September". */
+export function formatFactor(factor: string) {
+  const month = /^Received Month: (\d{1,2})$/.exec(factor);
+  if (month) return `Received month: ${MONTH_NAMES[Number(month[1]) - 1] ?? month[1]}`;
+  return factor
+    .replace(/^Received Day of Week:/, "Received on:")
+    .replace(/^Narrative Length$/, "Narrative length");
+}
+
 /** "2025-12-04" -> "Dec 4, 2025" (read as a calendar date, no timezone shift) */
 export function formatDate(isoDate: string) {
   const date = parseIsoDate(isoDate);

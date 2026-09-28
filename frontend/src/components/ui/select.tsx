@@ -4,6 +4,7 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 import { Select as SelectPrimitive } from "radix-ui"
 import { ChevronDownIcon, CheckIcon, ChevronUpIcon } from "lucide-react"
+import { Icon } from "@/components/icon"
 
 function Select({
   ...props
@@ -50,7 +51,7 @@ function SelectTrigger({
     >
       {children}
       <SelectPrimitive.Icon asChild>
-        <ChevronDownIcon className="pointer-events-none size-4 text-muted-foreground" />
+        <Icon name="chevron-down" className="pointer-events-none h-1.5 w-2.5 text-ink" />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   )

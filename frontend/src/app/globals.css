@@ -16,6 +16,9 @@
   --color-sidebar: #202121;
   --color-surface: #272727;          /* Black/Big Stone 41 — cards */
   --color-inset: #151515;            /* Black/Bunker 19 — inputs, rule rows, bar tracks */
+  --color-result: #1d1d1d;           /* Black/Bunker 38 — score result card */
+  --color-chip-dark: #262626;        /* Black/Shark 48 — neutral chip on the result card */
+  --color-axis: #5e5e5e;             /* Blue/Fiord 35 — zero line in "Why this score" */
   --color-chip: #383838;             /* Indigo/Big Stone 39 — neutral chips, skeletons */
   --color-chip-2: #3c3c3c;
   --color-bar: #3f3f3f;              /* Indigo/Pickled Bluewood 35 — muted bars */
