@@ -51,6 +51,7 @@
   --color-brand: #4ff7bc;            /* Turquoise/Aquamarine 47 */
   --color-on-brand: #062b20;
   --color-on-brand-nav: #141414;
+  --color-brand-soft: #8fe3c2;       /* labels on the "correct" confusion cells */
   --color-brand-tint: #122a22;       /* Black/Timber Green 29 */
   --color-brand-tint-2: #12211c;     /* Black/Aztec 19 */
   --color-row-selected: #14231e;     /* Black/Aztec 24 — selected table row */
