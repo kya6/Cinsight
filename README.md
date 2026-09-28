@@ -163,5 +163,3 @@ Cinsight.ipynb  the notebook that trained the model
 - **API → CranL**: point CranL at this repo; it builds the root `Dockerfile` (port 8000).
 - **Website → Vercel**: import the repo, set **Root Directory** to `frontend`, and add the environment
   variable `NEXT_PUBLIC_API_URL` = your CranL URL (no trailing slash).
-
-More detail for maintainers is in [CLAUDE.md](CLAUDE.md).
