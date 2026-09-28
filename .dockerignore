@@ -1,0 +1,29 @@
+# Only backend/ and artifacts/ belong in the API image.
+# artifacts/ must NOT be excluded: the model and the dashboard files live there.
+
+frontend/
+node_modules/
+**/node_modules/
+
+# The notebook and the raw complaints CSV (sample_batch.csv is served by the API, so keep it)
+*.ipynb
+.ipynb_checkpoints/
+*.csv
+!artifacts/*.csv
+
+.git/
+.gitignore
+.claude/
+assets/
+design/
+*.md
+Dockerfile
+.dockerignore
+
+# Local Python and secrets
+**/.venv/
+**/__pycache__/
+**/.pytest_cache/
+backend/tests/
+**/.env
+**/.env.*
