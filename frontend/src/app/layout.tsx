@@ -11,6 +11,7 @@ const tektur = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://cinsight.moxs.space"),
   title: { default: "Cinsight", template: "%s · Cinsight" },
   description: "Prioritize CFPB complaints that are likely to end in relief.",
 };
