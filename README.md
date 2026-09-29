@@ -1,6 +1,6 @@
 # Cinsight
 
-Cinsight predicts whether a CFPB consumer complaint will end in **relief** (the company gave monetary or
+Cinsight predicts whether a [CFPB consumer complaint](https://www.consumerfinance.gov/data-research/consumer-complaints/search/?date_received_min=2025-01-01&date_received_max=2025-12-31&has_narrative=true&searchField=all&tab=List) will end in **relief** (the company gave monetary or
 non-monetary relief), so a customer-service team can review the likely ones first.
 
 ## Live Demo
@@ -14,8 +14,6 @@ The model was trained in `Cinsight.ipynb`. The website has two parts that run si
 - **The website** (`frontend/`, Next.js): the pages you click through. It asks the API for everything.
 
 You need both running to use the site on your computer.
-
-- [CFPB consumer complaint](https://www.consumerfinance.gov/data-research/consumer-complaints/search/?date_received_min=2025-01-01&date_received_max=2025-12-31&has_narrative=true&searchField=all&tab=List)
 
 ---
 
