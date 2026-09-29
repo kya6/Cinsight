@@ -163,6 +163,13 @@ function OutcomeCard({ kpis, outcomes }: { kpis?: Dashboard["kpis"]; outcomes?: 
         <div className="flex flex-1 items-center gap-5.5">
           {/* The legend beside the donut carries the same numbers as text */}
           <div aria-hidden="true" className="relative size-38.5 shrink-0">
+            {/* Painted first so the hover tooltip always sits on top of the centre total */}
+            <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
+              <span className="text-[20px] leading-6 font-bold text-ink tabular-nums">
+                <CountUp value={kpis.total_complaints} format={formatCount} />
+              </span>
+              <span className="text-10 text-ink-3">complaints</span>
+            </div>
             <PieChart width={154} height={154} accessibilityLayer={false}>
               <Pie
                 data={slices}
@@ -183,6 +190,7 @@ function OutcomeCard({ kpis, outcomes }: { kpis?: Dashboard["kpis"]; outcomes?: 
                 ))}
               </Pie>
               <Tooltip
+                wrapperStyle={{ zIndex: 20 }}
                 content={({ active, payload }) => {
                   const s = active ? payload?.[0]?.payload : undefined;
                   return s ? (
@@ -194,12 +202,6 @@ function OutcomeCard({ kpis, outcomes }: { kpis?: Dashboard["kpis"]; outcomes?: 
                 }}
               />
             </PieChart>
-            <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
-              <span className="text-[20px] leading-6 font-bold text-ink tabular-nums">
-                <CountUp value={kpis.total_complaints} format={formatCount} />
-              </span>
-              <span className="text-10 text-ink-3">complaints</span>
-            </div>
           </div>
           <ul
             className="flex min-w-0 flex-1 flex-col gap-3.5"

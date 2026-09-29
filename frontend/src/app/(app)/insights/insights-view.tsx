@@ -47,11 +47,11 @@ export function InsightsView() {
       ) : (
         <>
           <MetricCards meta={meta.data} test={test.data} comparison={comparison.data} />
-          <div className="grid items-start gap-3.5 md:gap-4 xl:grid-cols-[minmax(0,624fr)_minmax(0,480fr)]">
+          <div className="grid items-start gap-3.5 md:gap-4 xl:grid-cols-[minmax(0,624fr)_minmax(0,480fr)] xl:items-stretch">
             <ComparisonCard meta={meta.data} comparison={comparison.data} />
             <ConfusionCard meta={meta.data} test={test.data} />
           </div>
-          <div className="grid items-start gap-3.5 md:grid-cols-2 md:gap-4 xl:grid-cols-3">
+          <div className="grid items-start gap-3.5 md:grid-cols-2 md:gap-4 xl:grid-cols-3 xl:items-stretch">
             <ShapCard shap={shap.data} testMonth={testMonth} />
             <PrCurveCard pr={pr.data} test={test.data} testMonth={testMonth} />
             <EvaluationCard
@@ -210,7 +210,10 @@ function ConfusionCard({ meta, test }: { meta?: ModelMeta; test?: Dashboard["tes
         {test ? `${month} results · ${formatCount(test.n)} complaints` : "Test results"}
       </CardTitle>
       {cells ? (
-        <ul className="grid grid-cols-2 gap-2.5" aria-label="Confusion matrix at the high-priority threshold">
+        <ul
+          className="grid grid-cols-2 gap-2.5 xl:flex-1 xl:auto-rows-fr"
+          aria-label="Confusion matrix at the high-priority threshold"
+        >
           {cells.map((cell) => (
             <li
               key={cell.label}
@@ -308,7 +311,7 @@ function PrCurveCard({ pr, test, testMonth }: {
         </Loading>
       ) : (
         <>
-          <div aria-hidden="true" className="h-61.5">
+          <div aria-hidden="true" className="h-61.5 xl:h-auto xl:min-h-61.5 xl:flex-1">
             <ResponsiveContainer width="100%" height="100%" initialDimension={{ width: 318, height: 246 }}>
               <LineChart data={points} margin={{ top: 22, right: 10, bottom: 22, left: 4 }} accessibilityLayer={false}>
                 <CartesianGrid stroke="var(--color-line-soft)" vertical={false} />
