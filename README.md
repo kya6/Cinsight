@@ -175,3 +175,5 @@ Cinsight.ipynb  the notebook that trained the model
 - Luluh Almasoud
 - Wafa Mohammed
 - Shouq Qahl
+
+  
