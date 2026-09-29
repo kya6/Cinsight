@@ -3,6 +3,11 @@
 Cinsight predicts whether a CFPB consumer complaint will end in **relief** (the company gave monetary or
 non-monetary relief), so a customer-service team can review the likely ones first.
 
+## Live Demo
+
+Try the Cinsight web application here:  
+https://cinsight.moxs.space
+
 The model was trained in `Cinsight.ipynb`. The website has two parts that run side by side:
 
 - **The API** (`backend/`, Python): loads the trained model from `artifacts/` and scores complaints.
